@@ -1,0 +1,118 @@
+server:
+  port: 5506
+  servlet:
+    context-path: /notification
+
+spring:
+  data:
+    mongodb:
+      database: khl_notification
+  kafka:
+    producer:
+      acks: 1 # 0: no wait for Kafka response, 1: leader write success, not wait for follower, -1: wait for all leader, and replication
+      retries: 1
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+kafka:
+  groups:   
+    # sso
+    create-account-topic: ${CREATE_SSO_ACCOUNT_ID:create-account-group-notification}
+    update-account-topic: ${UPDATE_SSO_ACCOUNT_ID:update-account-group-notification}
+    delete-account-topic: ${DELETE_SSO_ACCOUNT_ID:delete-account-group-notification}
+    sync-account-topic: sync-account-group-notification
+    # comment
+    create-comment-topic: khl_prod_create-comment-group-notification
+    tag-comment-topic: khl_prod_tag-comment-group-notification
+    # crm ring group
+    create-customer-topic-ring: khl_prod_create-customer-ring-group-notification
+    create-product-topic-ring: khl_prod_create-product-ring-group-notification
+    create-contract-topic-ring: khl_prod_create-contract-ring-group-notification
+    update-customer-topic-ring: khl_prod_update-customer-ring-group-notification
+    update-product-topic-ring: khl_prod_update-product-ring-group-notification
+    update-contract-topic-ring: khl_prod_update-contract-ring-group-notification
+    delete-customer-topic-ring: khl_prod_delete-customer-ring-group-notification
+    delete-product-topic-ring: khl_prod_delete-product-ring-group-notification
+    delete-contract-topic-ring: khl_prod_delete-contract-ring-group-notification
+    # crm mail group
+    create-customer-topic-mail: khl_prod_create-customer-mail-group-notification
+    create-product-topic-mail: khl_prod_create-product-mail-group-notification
+    create-contract-topic-mail: khl_prod_create-contract-mail-group-notification
+    update-customer-topic-mail: khl_prod_update-customer-mail-group-notification
+    update-product-topic-mail: khl_prod_update-product-mail-group-notification
+    update-contract-topic-mail: khl_prod_update-contract-mail-group-notification
+    delete-customer-topic-mail: khl_prod_delete-customer-mail-group-notification
+    delete-product-topic-mail: khl_prod_delete-product-mail-group-notification
+    delete-contract-topic-mail: khl_prod_delete-contract-mail-group-notification
+    # crm marketing
+    schedule-send-mail-topic: khl_prod_schedule-send-mail-group-notification
+    cancel-schedule-send-mail-topic: khl_prod_cancel-schedule-send-mail-group-notification
+    send-customer-sms-for-marketing-topic: khl_prod_send-customer-sms-for-marketing-group-notification
+    cancel-send-customer-sms-for-marketing-topic: khl_prod_cancel-send-customer-sms-for-marketing-group-notification
+    send-user-email-for-survey-topic: khl_prod_send-user-email-for-survey-group-notification
+    send-customer-email-for-survey-topic: khl_prod_send-customer-email-for-survey-group-notification
+    send-guest-email-for-survey-topic: khl_prod_send-guest-email-for-survey-group-notification
+    send-mail-topic: khl_prod_send-mail-group-notification
+    #cart
+    placeholder-topic: khl_prod_placeholder-group-notification
+  topics:
+    # sso
+    create-account-topic: khl_prod_create-account-topic
+    update-account-topic: khl_prod_update-account-topic
+    delete-account-topic: khl_prod_delete-account-topic
+    sync-account-topic: khl_prod_sync-account-topic
+    # comment
+    create-comment-topic: khl_prod_create-comment-topic
+    tag-comment-topic: khl_prod_tag-comment-topic
+    # crm
+    create-customer-topic: khl_prod_create-customer-topic
+    create-product-topic: khl_prod_create-product-topic
+    create-contract-topic: khl_prod_create-contract-topic
+    update-customer-topic: khl_prod_update-customer-topic
+    update-product-topic: khl_prod_update-product-topic
+    update-contract-topic: khl_prod_update-contract-topic
+    delete-customer-topic: khl_prod_delete-customer-topic
+    delete-product-topic: khl_prod_delete-product-topic
+    delete-contract-topic: khl_prod_delete-contract-topic
+    # crm marketing
+    schedule-send-mail-topic: khl_prod_schedule-send-mail-topic
+    cancel-schedule-send-mail-topic: khl_prod_cancel-schedule-send-mail-topic
+    send-customer-sms-for-marketing-topic: khl_prod_send-customer-sms-for-marketing-topic
+    cancel-send-customer-sms-for-marketing-topic: khl_prod_cancel-send-customer-sms-for-marketing-topic
+    send-user-email-for-survey-topic: khl_prod_send-user-email-for-survey-topic
+    send-customer-email-for-survey-topic: khl_prod_send-customer-email-for-survey-topic
+    send-guest-email-for-survey-topic: khl_prod_send-guest-email-for-survey-topic
+    send-mail-topic: khl_prod_send-mail-topic
+    #cart
+    placeholder-topic: khl_prod_placeholder-topic
+
+redis:
+  time:
+    notification:
+      delete: 300
+  escape:
+    notification:
+      delete: khl_prod_delete-notify-dev/
+    sms:
+      schedule: khl_prod_schedule-sms-dev/
+    mail:
+      schedule: khl_prod_schedule-mail-dev/
+      
+app:
+  firebase-config-file: sw-erp-firebase-adminsdk-9yrq4-03ed6fcad5.json
+  tma:
+    smsURL: http://10.1.0.156:3008/api/v1/sendSMS
+
+swagger:
+  url: "http://192.168.121.91:5506/notification"
+      
+static:
+  url:
+    crm-service: http://192.168.121.91:5508/crm/
+avatar:
+  url:
+    sso-service: http://192.168.121.91:5530/sso/static/images/avatars/
+referent-link:
+  crm: http://192.168.121.91:5508/crm/
+  cart: http://192.168.121.91:5555/cart/
+      

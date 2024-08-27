@@ -1,0 +1,30 @@
+server:
+  port: 5510
+  servlet:
+    context-path: /bookmark
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: bookmark-service
+  data:
+    mongodb:
+      uri: mongodb://mongadmin:1234567890x%40X@10.100.253.4:27017/kml_bookmark_prod?authSource=admin
+      database: kml_bookmark_prod
+    redis:
+      cluster:
+        enabled: false
+        nodes:
+          10.100.253.3:6379
+  kafka:
+    topic:
+      get-bookmark-info: kml_prod_topic_new_bookmark_info_for_
+      delete-bookmark-info: kml_prod_topic_deleted_bookmark_info_for_
+      delete-object-bookmark: kml_prod_topic_delete_object_bookmark
+
+gateway:
+  host: http://10.100.253.1:5501
+api-gateway:
+  url: https://api-crmgw.khaiminhland.com
+

@@ -1,0 +1,27 @@
+server:
+  port: 5512
+  servlet:
+    context-path: /banner
+
+spring:
+  application:
+    name: banner-service
+  datasource:
+    url: jdbc:postgresql://10.100.253.2:5432/kml_banner_prod
+    username: postgres
+    password: 1234567890x@X
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: prod-banner-pool
+      maximum-pool-size: 50 #This means that HikariCP can maintain a maximum of 50 connections in the pool at any given time.
+      max-lifetime: 1800000 # a connection is allowed to live in the pool for a maximum of 30 minutes before it is closed and removed from the pool
+      idle-timeout: 300000 # after 5 minutes, if a connection is idle for longer than 5 minutes, it will be closed and removed from the pool
+      connection-timeout: 30000 #  if a connection is not available within 30 seconds, a SQLException will be thrown
+      minimum-idle: 3 # This means that HikariCP will maintain a minimum of 3 idle connections in the pool at all times
+      
+swagger:
+  url: http://10.100.253.1:5501
+  
+eureka:
+  instance:
+    ip-address: 10.100.253.1

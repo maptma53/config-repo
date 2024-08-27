@@ -1,0 +1,9 @@
+server:
+  port: ${PORT:5507}
+  servlet:
+    context-path: /comment-service
+
+spring:
+  data:
+    mongodb:
+      database: comment

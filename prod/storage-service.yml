@@ -1,0 +1,52 @@
+server:
+  port: 5504
+  servlet:
+    context-path: /storage
+  tomcat:
+    max-swallow-size: 500MB
+    max-http-form-post-size: 500MB
+
+signature:
+  md5:
+    secret-key: OwsSedr9Zy
+logging:
+  level:
+    org:
+      springframework:
+        web: ERROR
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-request-size: 500MB
+      max-file-size: 500MB
+      file-size-threshold: 10KB
+      enabled: true
+  application:
+    name: storage-service
+  kafka:
+    consumer:
+      properties:
+        max.poll.interval.ms: 1800000 # Tùy chỉnh max.poll.interval.ms
+        max.poll.records: 3 # Tùy chỉnh max.poll.records
+  data:
+    mongodb:
+      database: kml_storage_prod
+
+video:
+  limit-size: 500
+  duration: 3600000
+  qualities: 360, 720
+image:
+  limit-size: 10
+office:
+  limit-size: 200
+prefix: vn
+
+swagger:
+  url: "http://10.100.253.1:5501"
+
+is-production: false
+zone: Asia/Ho_Chi_Minh

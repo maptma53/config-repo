@@ -1,0 +1,167 @@
+server:
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,application/javascript,application/json
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+  http2:
+    enabled: true
+
+spring:
+  package-version: 1.0.0
+  web:
+    resources:
+      static-locations: file:/home
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+    static-path-pattern: /**
+  main:
+    allow-bean-definition-overriding: true
+  mail:
+    host: smtp.gmail.com
+    username: tmasolutions25year@gmail.com
+    password: mztofcxsybzexgpq
+    port: 587
+    properties:
+      mail:
+        debug: true
+        smtp:
+          ssl:
+            trust: smtp.gmail.com
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    transport:
+      protocol: smtp
+  data:
+    mongodb:
+      uri: mongodb://mongadmin:1234567890x@X%40@10.100.253.4:27017/admin
+      host: 10.100.253.4
+      port: 27017
+      username: mongadmin
+      password: 1234567890x@X
+      authentication-database: admin
+    redis:
+      database: 1
+      port: 6379
+      timeout: 30000
+      host: 10.100.253.3
+      username: default
+      password: 1234567890x@X
+  session:
+    store-type: redis
+    redis:
+      namespace: prod
+  cache:
+    type: redis
+    redis:
+      time-to-live: '45000'
+      cache-null-values: 'true'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+  kafka:
+    bootstrapAddress: 10.100.253.5:9092
+    bootstrap-servers: 10.100.253.5:9092
+    listener:
+      enabled: true
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+    groups:
+      create-sso-account: ${CREATE_SSO_ACCOUNT_ID:create-account-group-crm}
+      update-sso-account: ${UPDATE_SSO_ACCOUNT_ID:update-account-group-crm}
+      delete-sso-account: ${DELETE_SSO_ACCOUNT_ID:delete-account-group-crm}
+      sync-account-topic: sync-account-group-crm
+    topics:
+      create-account-topic: kml_prod_create-account-topic
+      update-account-topic: kml_prod_update-account-topic
+      delete-account-topic: kml_prod_delete-account-topic
+      sync-account-topic: kml_prod_sync-account-topic
+      create-customer-topic: kml_prod_create-customer-topic
+      create-product-topic: kml_prod_create-product-topic
+      create-contract-topic: kml_prod_create-contract-topic
+      update-customer-topic: kml_prod_update-customer-topic
+      update-product-topic: kml_prod_update-product-topic
+      update-contract-topic: kml_prod_update-contract-topic
+      delete-customer-topic: kml_prod_delete-customer-topic
+      delete-product-topic: kml_prod_delete-product-topic
+      delete-contract-topic: kml_prod_delete-contract-topic
+      send-customer-sms-for-marketing-topic: kml_prod_send-customer-sms-for-marketing-topic
+      cancel-send-customer-sms-for-marketing-topic: kml_prod_cancel-send-customer-sms-for-marketing-topic
+      send-customer-email-for-survey-topic: kml_prod_send-customer-email-for-survey-topic
+      send-user-email-for-survey-topic: kml_prod_send-user-email-for-survey-topic
+      send-guest-email-for-survey-topic: kml_prod_send-guest-email-for-survey-topic
+      schedule-send-mail-topic: kml_prod_schedule-send-mail-topic
+      cancel-schedule-send-mail-topic: kml_prod_cancel-schedule-send-mail-topic
+      send-mail-topic: kml_prod_send-mail-topic
+      create-webp-topic: kml-prod-topic-storage-create-webp-server
+      create-webm-topic: kml-prod-topic-storage-create-webm-server
+      convert-video: kml-prod-topic-storage-convert-video-server
+
+eureka:
+  instance:
+    ip-address: 10.100.253.1
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://10.100.253.1:5502/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  file:
+    name: application.log
+  level:
+    root: INFO
+    org.springframework: INFO
+
+video:
+  limit-size: 500
+  duration: 3600000
+  qualities: 360, 720
+image:
+  limit-size: 10
+office:
+  limit-size: 200
+prefix: vn
+
+users:
+  sync:
+    schedule:
+      time: 0 0 2 * * ?
+      time-zone: Asia/Ho_Chi_Minh
+schedule:
+  email:
+    customer-care:
+      time : 0 0 0 * * ?
+      zone : Asia/Ho_Chi_Minh
+
+jwt:
+  jwtSecret: 'sah@kk#nn#v4,^121.,!@{}psassaasa'
+  accessTokenExpired: 1440
+  refreshTokenExpired: 1450
+
+sso:
+  host: http://10.100.253.1:5530
+
+gateway:
+  host: http://10.100.253.1:5501
+api-gateway:
+  url: https://api-crmgw.khaiminhland.com
