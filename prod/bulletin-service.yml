@@ -18,8 +18,8 @@ spring:
       minimum-idle: 3 # This means that HikariCP will maintain a minimum of 3 idle connections in the pool at all times
       
 swagger:
-  url: http://192.168.121.91:5501
+  url: http://10.100.253.1:5501
   
 eureka:
   instance:
-    ip-address: 192.168.121.91
+    ip-address: 10.100.253.1
