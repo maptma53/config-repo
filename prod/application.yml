@@ -41,11 +41,11 @@ spring:
       protocol: smtp
   data:
     mongodb:
-      uri: mongodb://mongadmin:1234567890x@X%40@10.100.253.4:27017/admin
+      uri: mongodb://mongadmin:1234567890x%40X@10.100.253.4:27017/admin
       host: 10.100.253.4
       port: 27017
       username: mongadmin
-      password: 1234567890x@X
+      password: 1234567890x%40X
       authentication-database: admin
     redis:
       database: 1

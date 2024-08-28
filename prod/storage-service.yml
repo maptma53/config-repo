@@ -48,5 +48,5 @@ prefix: vn
 swagger:
   url: "http://10.100.253.1:5501"
 
-is-production: false
+is-production: true
 zone: Asia/Ho_Chi_Minh
