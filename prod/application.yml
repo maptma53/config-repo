@@ -45,7 +45,7 @@ spring:
       host: 10.100.253.4
       port: 27017
       username: mongadmin
-      password: 1234567890x%40X
+      password: 1234567890x@X
       authentication-database: admin
     redis:
       database: 1
