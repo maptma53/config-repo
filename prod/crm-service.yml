@@ -25,3 +25,8 @@ swagger:
 eureka:
   instance:
     ip-address: 10.100.253.1
+
+cron:
+  check-assignment-status: 0 0/30 * * * *
+
+assignment-expire-minutes: 60
