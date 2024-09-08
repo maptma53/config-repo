@@ -22,7 +22,7 @@ spring:
     multipart:
       max-request-size: 500MB
       max-file-size: 500MB
-      file-size-threshold: 10KB
+      file-size-threshold: 500MB
       enabled: true
   application:
     name: storage-service
