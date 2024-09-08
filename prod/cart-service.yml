@@ -23,5 +23,5 @@ swagger:
   url: http://10.100.253.1:5501
 
 account:
-  userName: "0908593837"
-  passWord: "1_Abc_123$" 
+  userName: "0123456789"
+  passWord: "abc123" 
