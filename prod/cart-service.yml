@@ -22,6 +22,6 @@ spring:
 swagger:
   url: http://10.100.253.1:5501
 
-account:
-  userName: "0967301310"
-  passWord: "KHL@123456" 
+account:  
+  userName: "0123456789"
+  passWord: "abc123" 

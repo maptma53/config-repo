@@ -158,9 +158,9 @@ jwt:
   accessTokenExpired: 1440
   refreshTokenExpired: 1450
 account:
-  userName: "0967301310"
-  passWord: "KHL@123456" 
-  
+  userName: "0123456789"
+  passWord: "abc123" 
+
 sso:
   host: http://10.100.253.1:5530
 
