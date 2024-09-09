@@ -157,7 +157,10 @@ jwt:
   jwtSecret: 'sah@kk#nn#v4,^121.,!@{}psassaasa'
   accessTokenExpired: 1440
   refreshTokenExpired: 1450
-
+account:
+  userName: "0967301310"
+  passWord: "KHL@123456" 
+  
 sso:
   host: http://10.100.253.1:5530
 
