@@ -29,4 +29,4 @@ eureka:
 cron:
   check-assignment-status: 0 0/30 * * * *
 
-assignment-expire-minutes: 0
+assignment-expire-minutes: 2
