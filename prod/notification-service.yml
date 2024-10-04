@@ -1,12 +1,13 @@
 server:
-  port: 5506
+  port: 5514
   servlet:
     context-path: /notification
 
 spring:
   data:
     mongodb:
-      database: khl_notification
+      uri: mongodb://mongadmin:1234567890x%40X@10.100.253.4:27017/kml_notification_prod?authSource=admin
+      database: kml_notification_prod
   kafka:
     producer:
       acks: 1 # 0: no wait for Kafka response, 1: leader write success, not wait for follower, -1: wait for all leader, and replication
@@ -92,27 +93,26 @@ redis:
       delete: 300
   escape:
     notification:
-      delete: khl_prod_delete-notify-dev/
+      delete: khl_prod_delete-notify-prod/
     sms:
-      schedule: khl_prod_schedule-sms-dev/
+      schedule: khl_prod_schedule-sms-prod/
     mail:
-      schedule: khl_prod_schedule-mail-dev/
-      
+      schedule: khl_prod_schedule-mail-prod/
 app:
-  firebase-config-file: sw-erp-firebase-adminsdk-9yrq4-03ed6fcad5.json
+  firebase-config-file: tma-ralations-firebase-adminsdk-emcd1-a00a58396e.json
+  # firebase-config-file: sw-erp-firebase-adminsdk-9yrq4-03ed6fcad5.json
   tma:
     smsURL: http://10.1.0.156:3008/api/v1/sendSMS
 
 swagger:
-  url: "http://192.168.121.91:5506/notification"
+  url: "http://10.100.253.1:5501"
       
 static:
   url:
-    crm-service: http://192.168.121.91:5508/crm/
+    crm-service: http://10.100.253.1:5508/crm/
 avatar:
   url:
-    sso-service: http://192.168.121.91:5530/sso/static/images/avatars/
+    sso-service: http://10.100.253.1:5530/sso/static/images/avatars/
 referent-link:
-  crm: http://192.168.121.91:5508/crm/
-  cart: http://192.168.121.91:5555/cart/
-      
+  crm: http://10.100.253.1:5508/crm/
+  cart: http://10.100.253.1:5511/cart/
