@@ -1,0 +1,4 @@
+server:
+  port: 5515
+  servlet:
+    context-path: /user-permission 

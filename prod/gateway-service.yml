@@ -26,6 +26,7 @@ spring:
               - 'http://10.100.253.1:5512/'
               - 'http://10.100.253.1:5513/'
               - 'http://10.100.253.1:5514/'
+              - 'http://10.100.253.1:5515/'
             allowedMethods:
               - '*'
             allowedHeaders:
@@ -76,4 +77,9 @@ spring:
           uri: lb://bulletin-service
           predicates:
             - Path=/bulletin/**
+        # =====================================
+        - id: user-permission
+          uri: lb://user-permission-service
+          predicates:
+            - Path=/user-permission/**
         # =====================================
