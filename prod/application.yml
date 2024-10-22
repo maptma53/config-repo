@@ -109,6 +109,9 @@ spring:
       create-webp-topic: kml-prod-topic-storage-create-webp-server
       create-webm-topic: kml-prod-topic-storage-create-webm-server
       convert-video: kml-prod-topic-storage-convert-video-server
+      # new kafka topics - active
+      fcm-notification-send: khl_dev_send-fcm-notification
+      send-mail-topic: khl_dev_send-mail-topic
 
 eureka:
   instance:
