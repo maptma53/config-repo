@@ -170,4 +170,4 @@ sso:
 gateway:
   host: http://10.100.253.1:5501
 api-gateway:
-  url: https://api-crmgw.khaiminhland.com
+  url: https://api-crmgw.kland.ai.vn
