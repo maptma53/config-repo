@@ -105,7 +105,6 @@ spring:
       send-guest-email-for-survey-topic: kml_prod_send-guest-email-for-survey-topic
       schedule-send-mail-topic: kml_prod_schedule-send-mail-topic
       cancel-schedule-send-mail-topic: kml_prod_cancel-schedule-send-mail-topic
-      send-mail-topic: kml_prod_send-mail-topic
       create-webp-topic: kml-prod-topic-storage-create-webp-server
       create-webm-topic: kml-prod-topic-storage-create-webm-server
       convert-video: kml-prod-topic-storage-convert-video-server
