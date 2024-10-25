@@ -170,3 +170,6 @@ gateway:
   host: http://10.100.253.1:5501
 api-gateway:
   url: https://api-crmgw.kland.ai.vn
+
+hrm-gateway:
+  url: https://api-hrm.kland.ai.vn/api
