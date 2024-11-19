@@ -174,6 +174,9 @@ api-gateway:
 hrm-gateway:
   url: https://api-hrm.kland.ai.vn/api
 
+fe-domain:
+  url: https://kland.ai.vn
+
 internal:
   account:
     username: "0123456789"
