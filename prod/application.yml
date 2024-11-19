@@ -173,3 +173,9 @@ api-gateway:
 
 hrm-gateway:
   url: https://api-hrm.kland.ai.vn/api
+
+internal:
+  account:
+    username: "0123456789"
+    password: "TmaSolutions@DC17"
+  secret: "kml_tma-5+RBlI$`MOnLhXBHO'wZZ2y0z'?{"
