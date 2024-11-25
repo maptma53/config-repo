@@ -39,8 +39,7 @@ redis:
     mail:
       schedule: khl_prod_schedule-mail-prod/
 app:
-  firebase-config-file: tma-ralations-firebase-adminsdk-emcd1-a00a58396e.json
-  # firebase-config-file: sw-erp-firebase-adminsdk-9yrq4-03ed6fcad5.json
+  firebase-config-file: kml-android-firebase-adminsdk-eplp9-e9ef4e0138.json
   tma:
     smsURL: http://10.1.0.156:3008/api/v1/sendSMS
 
