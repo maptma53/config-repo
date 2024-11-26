@@ -25,7 +25,7 @@ spring:
   mail:
     host: smtp.gmail.com
     username: hdht.khaiminhland@gmail.com
-    password: hgkgephoujuazhpm
+    password: KMLhdht1@
     port: 587
     properties:
       mail:
@@ -173,12 +173,12 @@ api-gateway:
 
 hrm-gateway:
   url: https://api-hrm.kland.ai.vn/api
-
-fe-domain:
-  url: https://kland.ai.vn
-
+  
 internal:
   account:
     username: "0123456789"
-    password: "TmaSolutions@DC17"
-  secret: "kml_tma-5+RBlI$`MOnLhXBHO'wZZ2y0z'?{"
+    password: "abc123"
+  secret: "kml_tma-check-user-permission"
+
+host:
+  ip: http://192.168.121.91
