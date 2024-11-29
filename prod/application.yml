@@ -185,3 +185,6 @@ internal:
 
 host:
   ip: http://10.100.253.1
+
+company-logo:
+  url: https://api-crmgw.kland.ai.vn/storage/files/download/vn_20241129T031315679260103_00000000-0000-0000-0000-000000000000_logohorizontalcolor.png
