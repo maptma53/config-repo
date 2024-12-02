@@ -188,3 +188,6 @@ host:
 
 company-logo:
   url: https://api-crmgw.kland.ai.vn/storage/files/download/vn_20241129T031315679260103_00000000-0000-0000-0000-000000000000_logohorizontalcolor.png
+
+default-avatar:
+  person: vn_20241202T105729192234387_00000000-0000-0000-0000-000000000000_person
