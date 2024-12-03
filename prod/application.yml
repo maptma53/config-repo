@@ -111,6 +111,9 @@ spring:
       # new kafka topics - active
       fcm-notification-send: khl_dev_send-fcm-notification
       send-mail-topic: khl_dev_send-mail-topic
+      # sync with hrm
+      hrm-sync-user-account: khl_hrm_update-user-account
+      hrm-sync-sale-revenue: khl_hrm_update-revenue
 
 eureka:
   instance:
