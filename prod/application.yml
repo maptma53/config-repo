@@ -190,7 +190,7 @@ host:
   ip: http://10.100.253.1
 
 company-logo:
-  url: https://api-crmgw.kland.ai.vn/storage/files/download/vn_20241129T031315679260103_00000000-0000-0000-0000-000000000000_logohorizontalcolor.png
+  url: https://api-crmgw.kland.ai.vn/storage/files/download/vn_20241203T104829632053574_00000000-0000-0000-0000-000000000000_fcmlogo.svg
 
 default-avatar:
   person: vn_20241202T105729192234387_00000000-0000-0000-0000-000000000000_person
