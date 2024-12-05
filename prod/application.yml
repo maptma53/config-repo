@@ -114,6 +114,7 @@ spring:
       # sync with hrm
       hrm-sync-user-account: khl_hrm_update-user-account
       hrm-sync-sale-revenue: khl_hrm_update-revenue
+      hrm-sync-sale-department: khl_hrm_update-user-orgchart
 
 eureka:
   instance:
