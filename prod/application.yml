@@ -184,7 +184,7 @@ fe-domain:
 internal:
   account:
     username: "0123456789"
-    password: "abc123"
+    password: "TmaSolutions@DC17"
   secret: "kml_tma-check-user-permission"
 
 host:
