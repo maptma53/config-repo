@@ -165,7 +165,7 @@ jwt:
   refreshTokenExpired: 1450
 account:
   userName: "0123456789"
-  passWord: "abc123" 
+  passWord: "TmaSolutions@DC17" 
 
 sso:
   host: http://10.100.253.1:5530
