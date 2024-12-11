@@ -1,0 +1,127 @@
+server:
+  port: 5516
+  servlet:
+    context-path: /chat
+
+ws:
+    chat:
+        destination: /topic/chat
+    stomp:
+        endpoint:
+            chat: /ws-chat
+
+kafka:
+    env: dev
+    chat:
+        topic: topic_send_chat_${kafka.env}
+
+app:
+    env: dev
+    rabbitmq:
+        active: true
+    sensitive-data:
+        hidden-modules:
+            - "TRAVEL"
+    recommend-question:
+        min: 5
+        load-strategy: CONFIG
+
+broker:
+    relay:
+        host: 10.100.253.1
+        port: 61613
+        #    client-login: my_login
+        #    client-passcode: my_passcode
+        client-login: guest
+        client-passcode: guest
+
+socbot:
+    recommend:
+        contact_supporter: "I want to meet supporter"
+        unknow_resp: "Sorry, I don't have enough knowledge to answer your question."
+        opening:
+            - "HI_THERE_IM_HERE_TO_ASSIST_YOU"
+            - "HELLO_IM_READY_TO_HELP_YOU_OUT"
+            - "GREETINGS_IM_HERE_TO_PROVIDE_YOU_WITH_SUPPORT"
+            - "HEY_IM_HERE_TO_BACK_YOU_UP"
+            - "HELLO_IM_HERE_TO_LEND_A_HAND"
+            - "HI_IM_AVAILABLE_TO_SUPPORT_YOU"
+            - "HELLO_IM_HERE_TO_GUIDE_YOU"
+            - "HI_IM_HERE_TO_ASSIST_WITH_ANYTHING_YOU_NEED"
+            - "HELLO_IM_HERE_TO_OFFER_MY_SUPPORT"
+            - "HEY_THERE_IM_HERE_TO_HELP_IN_ANY_WAY_I_CAN"
+        questions:
+            COMMON:
+                - "WHAT_IS_SOCTRIP"
+                - "IS_SOCTRIP_GOOD_TO_USE"
+                - "WHY_SOCTRIP_USE_COOKIES"
+                - "HOW_TO_DOWNLOAD_APPLICATION"
+                - "HOW_TO_DELETE_SOCTRIP_ACCOUNT"
+            TRAVEL:
+                - "HOW_DO_I_KNOW_IF_I_HAVE_BOOKED_A_TOUR_SUCCESSFULLY"
+                - "HOW_FAR_IN_ADVANCE_CAN_I_BOOK_A_TOUR"
+                - "WHAT_WILL_I_EAT_WHILE_ON_TOUR_IF_I_AM_A_VEGETARIAN"
+                - "IS_IT_ACCEPTABLE_IF_I_DONT_WANT_TO_EAT_WITH_THE_TOUR"
+                - "CAN_I_CHANGE_TO_ANOTHER_TOUR_OR_ALTER_THE_DATE_OF_MY_TOUR_ONCE_PURCHASED"
+                - "CAN_THE_TOUR_BE_TAKEN_WITH_ELDERLY_PEOPLE"
+                - "CAN_THE_TOUR_BE_TAKEN_WHO_USE_WHEELCHAIRS"
+                - "WHAT_IS_SINGLE_SUPPLEMENT"
+                - "ARE_CHILDREN_ALLOWED_TO_TRAVEL_ALONE"
+                - "HOW_DO_I_MAKE_SURE_TOUR_REVIEWS_ON_SOCTRIP_ARE_TRUSTWORTHY"
+            CAR:
+                - "WHAT_DOCUMENTS_DO_I_NEED_TO_RENT_A_CAR"
+                - "WHATS_INCLUDED_IN_THE_RESERVATION_PRICE"
+                - "WHAT_DOCUMENTS_DO_I_NEED_TO_RENT_A_CAR"
+                - "HOW_OLD_DO_I_HAVE_TO_BE_TO_RENT_A_CAR"
+                - "CAN_I_BOOK_A_RENTAL_CAR_FOR_SOMEONE_ELSE"
+                - "CAN_I_BOOK_A_ONE_WAY_CAR_RENTAL"
+                - "CAN_I_RENT_MORE_THAN_ONE_CAR_FOR_A_GROUP_OF_FRIENDS_AT_A_TIME"
+                - "ARE_THERE_ANY_SUGGESTIONS_ON_HOW_I_CAN_CHOOSE_AN_APPROPRIATE_CAR"
+                - "WHAT_IF_MY_RENTAL_CAR_IS_DAMAGED_OR_HAS_A_PROBLEM_DURING_THE_RENTAL_PERIOD"
+                - "CAN_I_GET_A_PAYMENT_INVOICE"
+                - "CAN_I_USE_MY_VIETNAMESE_DRIVERS_LICENSE_TO_DRIVE_IN_FOREIGN_COUNTRIES"
+                - "CAN_I_USE_MY_INTERNATIONAL_DRIVERS_LICENSE_TO_DRIVE_IN_VIETNAM"
+                - "HOW_DO_I_MODIFY_THE_CONTACT_INFORMATION_IN_MY_BOOKING"
+                - "HOW_DO_I_MODIFY_RENAME_THE_CAR_RECIPIENT"
+                - "WHAT_SHOULD_I_DO_IF_I_WANT_TO_CHANGE_THE_PICKUP_OR_DROP_OFF_DATE_TIME"
+            FLIGHT:
+                - "HOW_CAN_I_SEARCH_FOR_A_SUITABLE_FLIGHT"
+                - "HOW_CAN_I_FILTER_THE_SEARCH_RESULTS"
+                - "HOW_CAN_I_FIND_THE_CHEAPEST_TICKETS"
+                - "WHAT_IS_THE_AIRLINES_CHECKED_BAGGAGE_POLICY"
+                - "WHAT_IS_THE_EXCESS_BAGGAGE_FEE"
+                - "WHAT_SHOULD_I_DO_IF_MY_BAGGAGE_IS_LOST_OR_DAMAGED"
+                - "IS_THERE_A_SIZE_LIMIT_FOR_CARRY- ON_BAGGAGE"
+                - "HOW_DO_I_BOOK_A_FLIGHT"
+                - "CAN_I_BOOK_TICKETS_FOR_MULTIPLE_PASSENGERS_AT_THE_SAME_TIME"
+                - "DO_I_NEED_AN_ACCOUNT_TO_BOOK_A_FLIGHT"
+                - "HOW_CAN_I_VIEW_THE_DETAILS_OF_MY_BOOKING"
+                - "CAN_I_CANCEL_MY_BOOKING"
+                - "HOW_CAN_I_CHECK_THE_PAYMENT_STATUS_OF_MY_ORDER"
+                - "HOW_DO_I_ADD_CHECKED_BAGGAGE_WHEN_BOOKING_A_FLIGHT"
+                - "CAN_I_PRE- ORDER_A_MEAL_DURING_THE_BOOKING_PROCESS"
+                - "HOW_DO_I_CHOOSE_A_SEAT_WHEN_BOOKING_A_FLIGHT"
+                - "CAN_I_CALL_CUSTOMER_SUPPORT_DURING_THE_BOOKING_PROCESS"
+                - "WHAT_TRAVEL_DOCUMENTS_DO_I_NEED"
+                - "CAN_I_ADD_TRAVEL_INSURANCE_TO_MY_BOOKING"
+                - "CAN_I_UPGRADE_TO_A_HIGHER_CLASS_EG_BUSINESS_CLASS"
+            HOTEL:
+                - "HOW_DO_I_BOOK_A_ROOM_ON_THE_SYSTEM"
+                - "CAN_I_BOOK_A_ROOM_FOR_SOMEONE_ELSE"
+                - "IS_THERE_A_WAY_TO_VIEW_MY_PREVIOUS_BOOKINGS"
+                - "CAN_I_PAY_AFTER_ARRIVING_AT_THE_HOTEL"
+                - "CAN_I_PAY_WITH_CASH"
+                - "HOW_DO_I_CHECK_THE_STATUS_OF_MY_BOOKING"
+                - "HOW_DO_I_CANCEL_MY_BOOKING"
+                - "IS_THERE_A_FEE_FOR_CANCELING_MY_BOOKING"
+                - "DOES_THE_HOTEL_ALLOW_PETS"
+                - "DOES_THE_ROOM_INCLUDE_PARKING_FACILITIES"
+                - "IS_MY_PAYMENT_INFORMATION_SECURE"
+                - "CAN_I_ADD_MORE_GUESTS_TO_MY_BOOKING"
+                - "DO_I_NEED_TO_PROVIDE_AN_ID_UPON_CHECK_IN"
+                - "CAN_I_BOOK_MORE_THAN_ONE_ROOM_IN_A_SINGLE_RESERVATION"
+                - "CAN_I_REQUEST_EARLY_CHECK_IN_OR_LATE_CHECK_OUT"
+
+
+swagger:
+  url: "http://10.100.253.1:5501"
