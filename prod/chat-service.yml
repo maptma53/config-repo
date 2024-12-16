@@ -16,7 +16,7 @@ kafka:
         topic: topic_send_chat_${kafka.env}
 
 app:
-    env: dev
+    env: prod
     rabbitmq:
         active: true
     sensitive-data:
