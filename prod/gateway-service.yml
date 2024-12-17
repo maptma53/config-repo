@@ -27,6 +27,8 @@ spring:
               - 'http://10.100.253.1:5513/'
               - 'http://10.100.253.1:5514/'
               - 'http://10.100.253.1:5515/'
+              - 'http://10.100.253.1:5516/'
+              - 'http://10.100.253.1:5518/'
             allowedMethods:
               - '*'
             allowedHeaders:
@@ -82,4 +84,9 @@ spring:
           uri: lb://user-permission-service
           predicates:
             - Path=/user-permission/**
+        # =====================================        
+        - id: marketing
+          uri: lb://marketing-service
+          predicates:
+            - Path=/marketing/**
         # =====================================
